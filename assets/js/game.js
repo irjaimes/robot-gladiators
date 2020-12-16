@@ -10,7 +10,7 @@ var enemyAttack = 12;
 
 var fight = function(enemyName) { //fight function expression
     //Repeate and execute as long as the enemy-robot is alive
-    while(enemyHealth > 0) {
+    while(enemyHealth > 0 && playerHealth > 0) {
 
     var promptFight = prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to chose.");
     if (promptFight === "fight" || promptFight === "FIGHT") {
@@ -20,6 +20,7 @@ var fight = function(enemyName) { //fight function expression
         // check enemy's health
         if (enemyHealth <=0) {
             alert(enemyName + " has died!");
+            break; //to exit current loop once enemy dies
          } 
         else {
             alert(enemyName + " still has " + enemyHealth + " health left.");
@@ -30,13 +31,14 @@ var fight = function(enemyName) { //fight function expression
         // check player's health
         if (playerHealth <= 0) {
             alert(playerName + " has died!");
+            break; //to exit current loop once player dies
         }
         else {
             alert(playerName + " still has " + playerHealth + " health left.");
             console.log(playerName + " still has " + playerHealth + " health left.");
         }
-        //if player chooses to skip battle fight
         }
+        //if player chooses to skip battle fight
     else if (promptFight === "skip" || promptFight === "SKIP") { 
         //confirm player wants to skip
         var confirmSkip = confirm("Are you sure you'd like to quit?");
@@ -44,7 +46,8 @@ var fight = function(enemyName) { //fight function expression
         if (confirmSkip) {
             alert(playerName + " has decided to skipt this fight. Goodbye!");
         //subtract money from playerMoney for skipping
-            playerMoney = playerMoney - 2;
+            playerMoney = playerMoney - 10;
+            console.log("playerMoney", playerMoney);
         }
         //if no (false), ask question by running fight( again)
         else {
