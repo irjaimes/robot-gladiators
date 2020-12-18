@@ -4,12 +4,12 @@ var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 
-var enemyName = ["Roborto","Amy Android","Robo Trumble"]; 
+var enemyName = ["Roborto", "Amy Android", "Robo Trumble"]; 
 var enemyHealth = 50;
 var enemyAttack = 12;
 
 // FIGHT FUNCTION EXPRESSION
-var fight = function (enemyName) {
+var fight = function (enemyName) { 
     //Repeate and execute as long as the enemy-robot is alive
     while(enemyHealth > 0 && playerHealth > 0) {
 
@@ -17,13 +17,13 @@ var fight = function (enemyName) {
     var promptFight = prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to chose.");
 
         //if player chooses to skip battle, stop loop
-        if(promptFight === "skip" || promptFight === "SKIP") { 
+        if (promptFight === "skip" || promptFight === "SKIP") { 
 
         //confirm player wants to skip
             var confirmSkip = confirm ("Are you sure you'd like to quit?");
 
             //if yes (true), leave fight
-            if(confirmSkip) {
+            if (confirmSkip) {
                 alert(playerName + " has decided to skipt this fight. Goodbye!");
                 //subtract money from playerMoney for skipping
                 playerMoney = playerMoney - 10;
@@ -75,8 +75,8 @@ var startGame = function() {
     playerHealth = 10;
     playerMoney = 10;
     
-    for (var i = 0; i < enemyNames.length; i++) {
-        if (playerHealth > 0){
+    for (var i = 0; i < enemyName.length; i++) {
+        if (playerHealth > 0) {
             //let player know what round thery are in, remember that arrays start at 0 so it needs to have 1 added to it
             alert("Welcome to Robot Gladiators! Round " + (i + 1));
 
