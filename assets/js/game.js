@@ -179,9 +179,6 @@ var randomNumber = function(min, max) {
 }
  
  
- 
- 
- 
  // call start the game when the page loads
  startGame();
  
