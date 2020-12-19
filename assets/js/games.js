@@ -4,7 +4,7 @@ var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 
-var enemyName = ["Roborto", "Amy Android", "Robo Trumble"]; 
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"]; 
 var enemyHealth = 50;
 var enemyAttack = 12;
 
@@ -75,13 +75,13 @@ var startGame = function() {
     playerHealth = 10;
     playerMoney = 10;
     
-    for (var i = 0; i < enemyName.length; i++) {
+    for (var i = 0; i < enemyNames.length; i++) {
         if (playerHealth > 0) {
             //let player know what round thery are in, remember that arrays start at 0 so it needs to have 1 added to it
             alert("Welcome to Robot Gladiators! Round " + (i + 1));
 
             //pick new enemy to fight based on the index of the enemyName array
-            var pickedEnemyName = enemyName[i];
+            var pickedEnemyName = enemyNames[i];
             
             //reset enemyHealth before starting new fight
             enemyHealth = 50; 
