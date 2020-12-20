@@ -178,10 +178,6 @@ var randomNumber = function(min, max) {
     return value;
 }
  
- 
- 
- 
- 
  // call start the game when the page loads
  startGame();
  
