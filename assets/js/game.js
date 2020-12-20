@@ -1,6 +1,17 @@
 // GLOBAL VARIABLES
+
+//function to set playerName
+var getPlayerName = function() {
+    var name = "";
+
+    while (name === null || name === "") {
+        name = prompt("What is your robot's name");
+    }   
+};
+
+
 var playerInfo = {
-    name: window.prompt("What is your robot's name?"),
+    name: getPlayerName(),
     health: 100,
     attack: 10,
     money: 10,
@@ -118,6 +129,7 @@ var startGame = function () {
         if (playerInfo.health > 0) {
             //let player know what round they are in, since array starts at 0, we need to add +1.
             alert("Welcome to Robot Gladiators! Round " + (i + 1));
+            //debugger;
             //variable to pick new enemy based on index in enemyNames array
             var pickedEnemyObj = enemyInfo[i];
             //reset enemy.health since this will be a new enemy
